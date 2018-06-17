@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="game_website304.css">
+  </head>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+     <button id=toggle type="button" class="navbar-toggle ml-auto" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    <div id=bar_1  class="navbar-header">
+      <a class="navbar-left" href="#">
+        <img id=logo_1 class="img-responsive" src="images/gamebox-logo.png" onclick="location.href ='Home.html'">
+         </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a onclick="location.href ='sign_up.html'"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+ <body>
+   <div id=fill_space3 class="container-fluid">
+     <div class=row>
+   </div>
+  </div>
+ <div class="row">
+  <div class="col-xs-3 col-sm-4"></div>
+  <div id=sign_box class="col-xs-6 col-sm-4"><h1>Log in</h1>
+  <p>please sign in below</p>
+<form action="/action_page.php"> <!-- sign up form. -->
+  <div class="form-group">
+    <label class="glyphicon glyphicon-envelope" for="email"> Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label class="glyphicon glyphicon-bookmark" for="pwd"> Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Log in</button>
+</form></div>
+  <div class="col-xs-3 col-sm-4"></div>
+</div>
+ <nav id=footer class="navbar navbar-inverse navbar-fixed-bottom hidden-sm hidden-xs"> //website footer
+  <div class="container-fluid">
+      <p class="text-center">follow us on all social media platforms.</p>
+    </div>
+    <ul class="nav navbar-nav">
+    </ul>
+  </div>
+</nav>
+ </body>
+</html>
