@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrapvalidator/0.11.9/validator.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="game_website304.css">
+  <link rel="stylesheet" type="text/css" href="./game_website304.css">
 </head>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -19,7 +19,7 @@
     </button>
     <div id=bar_1 class="navbar-header">
       <a class="navbar-left" href="#">
-        <img id=logo_1 class="img-responsive" src="images/gamebox-logo.png" onclick="location.href ='Home.html'">
+          <img id=logo_1 class="img-responsive" src="./images/gamebox-logo.png" onclick="location.href ='Home.html'">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -42,28 +42,28 @@
     <div class="col-xs-3 col-sm-4"></div>
     <div id=sign_box class="col-xs-6 col-sm-4">
       <h1>Sign Up</h1>
-      <p>This is some text.</p>
-      <form action="/action_page.php">
+      <p>This is some text</p>
+      <form method="post" action="/users/register">
         <!-- sign up form. -->
         <div class="form-group input-group has-feedback">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-user"></i>
           </span>
-          <input type="text" class="form-control" id="username" placeholder="Username" data-toggle="validator" required>
+          <input type="text" class="form-control" name="username" placeholder="Username" data-toggle="validator" required>
           <span class="glyphicon form-control-feedback has-success" aria-hidden="true"></span>
         </div>
         <div class="form-group input-group">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-envelope"></i>
           </span>
-          <input type="email" class="form-control" id="email" placeholder="Email Address" data-toggle="validator" required>
+          <input type="email" class="form-control" name="email" placeholder="Email Address" data-toggle="validator" required>
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         </div>
         <div class=" form-group input-group">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-gift"></i>
           </span>
-          <input type="date" class="form-control" id="dob" data-toggle="validator" required>
+          <input type="date" class="form-control" name="dob" data-toggle="validator" required>
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         </div>
         <div class="form-group">
@@ -268,7 +268,7 @@
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-lock"></i>
           </span>
-          <input type="password" class="form-control" id="pwd1" placeholder="Enter Password" data-match="#pwd2" data-minlength="6"
+          <input type="password" class="form-control" name="password1" placeholder="Enter Password" data-match="password2" data-minlength="6"
             pattern="^[a-zA-Z0-9_.-]*$" data-toggle="validator" required>
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         </div>
@@ -276,8 +276,8 @@
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-lock"></i>
           </span>
-          <input type="password" class="form-control" id="pwd2" placeholder="Repeat Password" data-match="#pwd1" data-minlength="6"
-            pattern="^[a-zA-Z0-9_.-]*$" data-toggle="validator" required>
+          <input type="password" class="form-control" name="password2" placeholder="Repeat Password" data-match="password1" data-minlength="6"
+            pattern="^[a-zA-Z0-9_.-]*$" data-match-error="passwords do not match" data-toggle="validator" required >
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         </div>
         <div class="form-group">

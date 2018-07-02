@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 
 //establish databse connection 
 
-mongoose.connect('mongodb://localhost/gameup');
+mongoose.connect('mongodb://localhost/',{autoIndex: false});
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
@@ -22,18 +22,18 @@ var users = require('./routes/users');
 // Init App
 var app = express();
 
-// View Engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'layout'}));
-app.set('view engine', 'handlebars');
-
 // BodyParser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('routes'));
+app.use(express.static('images'));
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/routes'));
+app.use(express.static(path.join(__dirname, 'views')));
 
 // Express Session
 app.use(session({
@@ -77,12 +77,11 @@ app.use(function (req, res, next) {
 });
 
 
-
 app.use('/', routes);
 app.use('/users', users);
 
 // Set Port
-app.set('port', (process.env.PORT || 3600));
+app.set('port', (process.env.PORT || 3800));
 
 app.listen(app.get('port'), function(){
 	console.log('Server started on port '+app.get('port'));
